@@ -1,8 +1,9 @@
-export const data = [{
+export const data = [
+  {
     id: 1,
     designation: "Iphone X",
     fabricant: "Apple",
-    categorie: "smartphone",
+    categorie: "Smartphone",
     prixTTC: 930,
     batterie: "12",
     image: "images/imageIphoneX.jpg",
@@ -16,7 +17,7 @@ export const data = [{
     id: 2,
     designation: "Huawei P20 Pro",
     fabricant: "Huawei",
-    categorie: "smartphone",
+    categorie: "Smartphone",
     prixTTC: 850,
     batterie: "24",
     image: "images/HuaweiP20Pro.jpg",
@@ -30,7 +31,7 @@ export const data = [{
     id: 3,
     designation: "Téléphone3",
     fabricant: "Huawei",
-    categorie: "smartphone",
+    categorie: "Smartphone",
     prixTTC: 850,
     batterie: "24",
     image: "images/HuaweiP20Pro.jpg",
@@ -44,7 +45,7 @@ export const data = [{
     id: 4,
     designation: "Téléphone4",
     fabricant: "Huawei",
-    categorie: "smartphone",
+    categorie: "Smartphone",
     prixTTC: 850,
     batterie: "24",
     image: "images/HuaweiP20Pro.jpg",
@@ -58,7 +59,7 @@ export const data = [{
     id: 5,
     designation: "Asus T400S",
     fabricant: "Asus",
-    categorie: "ordinateur",
+    categorie: "Ordinateur",
     prixTTC: 400,
     batterie: "12",
     image: "images/asus.jpg",
@@ -72,7 +73,7 @@ export const data = [{
     id: 6,
     designation: "Lenovo T430s",
     fabricant: "Lenovo",
-    categorie: "ordinateur",
+    categorie: "Ordinateur",
     prixTTC: 600,
     batterie: "6",
     image: "images/lenovoT430s.jpg",
@@ -86,7 +87,7 @@ export const data = [{
     id: 7,
     designation: "Ordinateur3",
     fabricant: "Lenovo",
-    categorie: "ordinateur",
+    categorie: "Ordinateur",
     prixTTC: 600,
     batterie: "6",
     image: "images/lenovoT430s.jpg",
@@ -100,7 +101,7 @@ export const data = [{
     id: 8,
     designation: "Ordinateur4",
     fabricant: "Lenovo",
-    categorie: "ordinateur",
+    categorie: "Ordinateur",
     prixTTC: 600,
     batterie: "6",
     image: "images/lenovoT430s.jpg",
@@ -110,5 +111,4 @@ export const data = [{
     label: "label3",
     note: 56
   }
-
-]
+];

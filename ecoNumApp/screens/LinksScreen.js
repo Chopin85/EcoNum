@@ -1,5 +1,6 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, Image } from "react-native";
+import SelectList from "../components/SelectList"
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
@@ -21,6 +22,7 @@ export default class LinksScreen extends React.Component {
           }}
         />
         <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
+        <SelectList/>
       </ScrollView>
     );
   }
