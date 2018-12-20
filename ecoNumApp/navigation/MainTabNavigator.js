@@ -19,7 +19,11 @@ HomeStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? `ios-map${focused ? "" : ""}` : "md-map"}
+      name={
+        Platform.OS === "ios"
+          ? `ios-phone-landscape${focused ? "" : ""}`
+          : "md-phone-landscape"
+      }
     />
   )
 };
@@ -33,9 +37,7 @@ LinksStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={
-        Platform.OS === "ios" ? "ios-phone-landscape" : "md-phone-landscape"
-      }
+      name={Platform.OS === "ios" ? "ios-search" : "md-search"}
     />
   )
 };
