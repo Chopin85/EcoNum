@@ -15,7 +15,7 @@ const HomeStack = createStackNavigator({
 });
 
 HomeStack.navigationOptions = {
-  tabBarLabel: "PRODUITS",
+  tabBarLabel: "Produits",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -29,7 +29,7 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: "JE COMPARE",
+  tabBarLabel: "Je compare",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -43,7 +43,7 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: "INFOS",
+  tabBarLabel: "Infos",
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}

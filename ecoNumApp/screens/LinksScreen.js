@@ -2,14 +2,6 @@ import React from "react";
 import { ScrollView, StyleSheet, Text, Image } from "react-native";
 
 export default class LinksScreen extends React.Component {
-  // static navigationOptions = {
-  //   headerTitle: (
-  //     <Image
-  //       source={require("../img/LogoEcoNum.png")}
-  //       style={{ width: 60, height: 60, marginBottom: 15 }}
-  //     />
-  //   ),
-  // };
   static navigationOptions = {
     headerTitle: (
       <Image
