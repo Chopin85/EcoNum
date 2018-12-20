@@ -33,7 +33,9 @@ LinksStack.navigationOptions = {
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === "ios" ? "ios-keypad" : "md-keypad"}
+      name={
+        Platform.OS === "ios" ? "ios-phone-landscape" : "md-phone-landscape"
+      }
     />
   )
 };
