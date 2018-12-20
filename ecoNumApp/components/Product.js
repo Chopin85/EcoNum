@@ -1,29 +1,45 @@
 import React, {
   Component
 } from 'react';
-
+import {
+  Text
+} from 'react-native';
 import {
   data
 } from '../data'
+
+
+
 class Product extends Component {
-  state = {}
-  getProduct(props) {
+  state = {
+
+  }
+  getProduct (props) {
     const {
       category,
-      Mark,
+      mark,
       model
     } = props
-
-    return data.filter(element => {element.})
+    const newData = []
+    newdata = data.filter(element => {
+      element.categorie === category && element.fabricant === mark && element.designation === model
+    })
+    alert(newData[0])
   }
-  render() {
-    return <Text { ...this.props
+  componentDidMount = () => {
+    this.getProduct(this.props)
+
+  }
+
+  render () {
+
+    return <Text {...this.props
     }
-    style = {
-      [this.props.style, {
-        fontFamily: 'space-mono'
-      }]
-    }
+      style={
+        [this.props.style, {
+          fontFamily: 'space-mono'
+        }]
+      }
     />;
   }
 
