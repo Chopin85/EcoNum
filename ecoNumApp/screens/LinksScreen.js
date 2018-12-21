@@ -15,22 +15,36 @@ const mark = "Apple";
 const model = "Iphone X";
 import Comparatif from "../components/Comparatif";
 import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
+import ListAlternativeProduct from "../components/ListAlternativeProduct";
 
 export default class LinksScreen extends React.Component {
   state = {
     open2produit: false,
-    category: "",
-    mark: "",
-    model: "",
-    isDisplayCompare: false
+    category1: "",
+    mark1: "",
+    model1: "",
+    category2: "",
+    mark2: "",
+    model2: "",
+    isDisplayCompare: false,
+    isDisplayListAlternative: false
   };
 
-  getCriteria = (category, mark, model) => {
+  getCriteriaProductOne = (category1, mark1, model1) => {
     // console.log("getCriteria", category, mark, model);
     this.setState({
-      category,
-      mark,
-      model
+      category1,
+      mark1,
+      model1
+    });
+  };
+
+  getCriteriaProductTwo = (category2, mark2, model2) => {
+    // console.log("getCriteria", category, mark, model);
+    this.setState({
+      category2,
+      mark2,
+      model2
     });
   };
 
@@ -44,14 +58,19 @@ export default class LinksScreen extends React.Component {
   };
 
   handlePressCompare = () => {
+    // this.setState({ isDisplayCompare: true });
+    console.log("ok");
+    this.setState({
+      open2produit: !this.state.open2produit
+    });
+  };
+
+  handleCompare = () => {
     this.setState({ isDisplayCompare: true });
   };
 
-  handlePress = () => {
-    console.log("ok");
-    this.setState({
-      open2produit: true
-    });
+  handleAlternative = () => {
+    this.setState({ isDisplayListAlternative: true });
   };
 
   render() {
@@ -66,9 +85,9 @@ export default class LinksScreen extends React.Component {
           }}
         />
         <Text style={styles.titleCompare}> Je compare mon appareil </Text>
-        <SelectList getCriteria={this.getCriteria} />
+        <SelectList getCriteria={this.getCriteriaProductOne} />
         {this.state.open2produit && (
-          <SelectList getCriteria={this.getCriteria} />
+          <SelectList getCriteria={this.getCriteriaProductTwo} />
         )}
         <View style={styles.homeButton}>
           <View style={styles.button}>
@@ -76,13 +95,24 @@ export default class LinksScreen extends React.Component {
               onPress={this.handlePressCompare}
               title="Comparer avec un 2ème produit"
             /> */}
-            <AwesomeButton
-              onPress={this.handlePressCompare}
-              backgroundColor="#75a579"
-              width={150}
-            >
-              Comparer avec un 2ème produit
-            </AwesomeButton>
+            {!this.state.open2produit && (
+              <AwesomeButton
+                onPress={this.handlePressCompare}
+                backgroundColor="#75a579"
+                width={150}
+              >
+                Comparer avec un 2ème produit
+              </AwesomeButton>
+            )}
+            {this.state.open2produit && (
+              <AwesomeButton
+                onPress={this.handleCompare}
+                backgroundColor="#75a579"
+                width={150}
+              >
+                Comparer
+              </AwesomeButton>
+            )}
           </View>
           <View style={styles.button}>
             {/* <Button
@@ -90,7 +120,7 @@ export default class LinksScreen extends React.Component {
               title="Trouver une alternative"
             /> */}
             <AwesomeButton
-              onPress={this.handlePress}
+              onPress={this.handleAlternative}
               backgroundColor="#75a579"
               width={150}
             >
@@ -100,10 +130,17 @@ export default class LinksScreen extends React.Component {
         </View>
         {this.state.isDisplayCompare && (
           <Comparatif
-            category={this.state.category}
-            mark={this.state.mark}
-            model={this.state.model}
+            category1={this.state.category1}
+            mark1={this.state.mark1}
+            model1={this.state.model1}
+            category2={this.state.category2}
+            mark2={this.state.mark2}
+            model2={this.state.model2}
           />
+        )}
+
+        {this.state.isDisplayListAlternative && (
+          <ListAlternativeProduct category={this.state.category1} />
         )}
       </ScrollView>
     );

@@ -17,9 +17,9 @@ export default class Comparatif extends Component {
   render() {
     console.log("render", this.props);
 
-    const { category, mark, model } = this.props;
-    const product1 = this.getProduct(category, mark, model);
-    const product2 = this.getProduct(category, mark, model);
+    const { category1, mark1, model1, category2, mark2, model2 } = this.props;
+    const product1 = this.getProduct(category1, mark1, model1);
+    const product2 = this.getProduct(category2, mark2, model2);
 
     return (
       <Fragment>
