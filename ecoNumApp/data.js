@@ -1,4 +1,5 @@
-export const data = [{
+export const data = [
+  {
     id: 1,
     designation: "Iphone X",
     fabricant: "Apple",
@@ -118,8 +119,8 @@ export const data = [{
   },
   {
     id: 9,
-    designation: "Lenovo ",
-    fabricant: "Assus",
+    designation: "Lenovo T430s ",
+    fabricant: "Lenovo",
     categorie: "ordinateur",
     prixTTC: 599,
     batterie: "6h",
@@ -132,8 +133,8 @@ export const data = [{
   },
   {
     id: 10,
-    designation: "Lenovo ",
-    fabricant: "Samung",
+    designation: "ASUS S430UA-EB265T",
+    fabricant: "Asus",
     categorie: "ordinateur",
     prixTTC: 1639.99,
     batterie: "12h",
