@@ -15,6 +15,10 @@ const model = "Iphone X";
 import Comparatif from "../components/Comparatif";
 
 export default class LinksScreen extends React.Component {
+  state = {
+    open2produit: false
+  };
+
   static navigationOptions = {
     headerTitle: (
       <Image
@@ -26,6 +30,9 @@ export default class LinksScreen extends React.Component {
 
   handlePress = () => {
     console.log("ok");
+    this.setState({
+      open2produit: true
+    });
   };
   render() {
     return (
@@ -40,6 +47,7 @@ export default class LinksScreen extends React.Component {
         />
         <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
         <SelectList />
+        {this.state.open2produit && <SelectList />}
         <View style={styles.homeButton}>
           <View style={styles.button}>
             <Button
@@ -76,8 +84,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
-
+    width: "100%"
   },
   button: {
     width: "40%",
@@ -85,7 +92,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 10,
     marginBottom: 10
-
   }
 });
 
