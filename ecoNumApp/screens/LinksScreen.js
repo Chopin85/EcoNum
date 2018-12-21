@@ -13,8 +13,25 @@ const category = "smartphone";
 const mark = "Apple";
 const model = "Iphone X";
 import Comparatif from "../components/Comparatif";
+import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 
 export default class LinksScreen extends React.Component {
+  state = {
+    category: "",
+    mark: "",
+    model: "",
+    isDisplayCompare: false
+  };
+
+  getCriteria = (category, mark, model) => {
+    // console.log("getCriteria", category, mark, model);
+    this.setState({
+      category,
+      mark,
+      model
+    });
+  };
+
   static navigationOptions = {
     headerTitle: (
       <Image
@@ -24,9 +41,14 @@ export default class LinksScreen extends React.Component {
     )
   };
 
+  handlePressCompare = () => {
+    this.setState({ isDisplayCompare: true });
+  };
+
   handlePress = () => {
     console.log("ok");
   };
+
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -39,11 +61,11 @@ export default class LinksScreen extends React.Component {
           }}
         />
         <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
-        <SelectList />
+        <SelectList getCriteria={this.getCriteria} />
         <View style={styles.homeButton}>
           <View style={styles.button}>
             <Button
-              onPress={this.handlePress}
+              onPress={this.handlePressCompare}
               title="Comparer avec un 2ème produit"
             />
           </View>
@@ -54,7 +76,13 @@ export default class LinksScreen extends React.Component {
             />
           </View>
         </View>
-        <Comparatif />
+        {this.state.isDisplayCompare && (
+          <Comparatif
+            category={this.state.category}
+            mark={this.state.mark}
+            model={this.state.model}
+          />
+        )}
       </ScrollView>
     );
   }
@@ -76,8 +104,7 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    width: "100%",
-
+    width: "100%"
   },
   button: {
     width: "40%",
@@ -85,7 +112,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 10,
     marginBottom: 10
-
   }
 });
 
