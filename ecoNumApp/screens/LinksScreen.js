@@ -54,7 +54,6 @@ export default class LinksScreen extends React.Component {
             />
           </View>
         </View>
-        <Product category={category} mark={mark} model={model} />
         <Comparatif />
       </ScrollView>
     );
@@ -76,14 +75,17 @@ const styles = StyleSheet.create({
   homeButton: {
     display: "flex",
     flexDirection: "row",
-    width: "50%",
-    borderWidth: 2,
-    borderColor: "red"
+    justifyContent: "center",
+    width: "100%",
+
   },
   button: {
-    width: "100%",
-    borderWidth: 2,
-    borderColor: "yellow"
+    width: "40%",
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+    marginBottom: 10
+
   }
 });
 
