@@ -7,6 +7,7 @@ import {
   Image,
   Button
 } from "react-native";
+import AwesomeButton from "react-native-really-awesome-button";
 import SelectList from "../components/SelectList";
 import Product from "../components/Product";
 const category = "smartphone";
@@ -71,16 +72,30 @@ export default class LinksScreen extends React.Component {
         )}
         <View style={styles.homeButton}>
           <View style={styles.button}>
-            <Button
+            {/* <Button
               onPress={this.handlePressCompare}
               title="Comparer avec un 2ème produit"
-            />
+            /> */}
+            <AwesomeButton
+              onPress={this.handlePressCompare}
+              backgroundColor="#75a579"
+              width={150}
+            >
+              Comparer avec un 2ème produit
+            </AwesomeButton>
           </View>
           <View style={styles.button}>
-            <Button
+            {/* <Button
               onPress={this.handlePress}
               title="Trouver une alternative"
-            />
+            /> */}
+            <AwesomeButton
+              onPress={this.handlePress}
+              backgroundColor="#75a579"
+              width={150}
+            >
+              Trouver une alternative
+            </AwesomeButton>
           </View>
         </View>
         {this.state.isDisplayCompare && (
@@ -116,7 +131,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: "40%",
-    marginLeft: 10,
+    marginLeft: 2,
     marginRight: 10,
     marginTop: 10,
     marginBottom: 10

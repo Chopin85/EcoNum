@@ -95,7 +95,7 @@ export default class Comparatif extends Component {
             <Text style={{ textAlign: "center" }}>{product1.resolution}</Text>
           </View>
           <View style={styles.vertical} />
-          <View style={{ flex: 1 }}>
+          <View style={{ flex: 1, marginBottom: 40 }}>
             <Text style={{ textAlign: "center" }}>{product2.resolution}</Text>
           </View>
         </View>
