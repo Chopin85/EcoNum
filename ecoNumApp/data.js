@@ -1,5 +1,4 @@
-export const data = [
-  {
+export const data = [{
     id: 1,
     designation: "Iphone X",
     fabricant: "Apple",
@@ -8,11 +7,11 @@ export const data = [
     das: "0.98 W/kg",
     resolution: 5.8,
     batterie: "11h45",
-    image: "images/imageIphoneX.jpg",
+    image: "img/iphonex.png",
     classeEnergie: "C",
     deee: 0.03,
     reyclable: "48%",
-    note: "54%"
+    note: 54
   },
   {
     id: 2,
@@ -23,11 +22,11 @@ export const data = [
     batterie: "50h",
     das: "0.4 W/kg",
     resolution: 6.39,
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/Smartphone-Huawei-Mate-20-Pro-Double-SIM-128-Go-Noir.jpg",
     deee: 0.02,
     classeEnergie: "A",
     recyclable: "50%",
-    note: "72%"
+    note: 72
   },
   {
     id: 3,
@@ -38,11 +37,11 @@ export const data = [
     batterie: "14h",
     das: "0.75 W/kg",
     resolution: 5.84,
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/HuaweiP20Pro.jpg",
     deee: 0.02,
     classeEnergie: "B",
     recyclable: "46%",
-    note: "65%"
+    note: 65
   },
   {
     id: 4,
@@ -53,11 +52,11 @@ export const data = [
     batterie: "9h",
     das: "0.173 W/kg",
     resolution: 5.2,
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/samsung-galaxy-note-8.jpg",
     deee: 0.02,
     classeEnergie: "B",
     recyclable: "58%",
-    note: "70%"
+    note: 70
   },
   {
     id: 5,
@@ -68,11 +67,11 @@ export const data = [
     batterie: "12h",
     das: "0.362 W/kg",
     resolution: 5.68,
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/HuaweiP20Pro.jpg",
     deee: 0.02,
     classeEnergie: "C",
     recyclable: "48%",
-    note: "48%"
+    note: 48
   },
   {
     id: 6,
@@ -83,11 +82,11 @@ export const data = [
     batterie: "22h",
     das: "0.58 W/kg",
     resolution: 4.24,
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/telephone-asus-zenfone-6-noir_4363_1.jpg",
     deee: 0.03,
     classeEnergie: "B",
     recyclable: "30%",
-    note: "59%"
+    note: 59
   },
   {
     id: 7,
@@ -97,11 +96,11 @@ export const data = [
     prixTTC: 1099,
     batterie: "12h",
     resolution: "1440 X 900",
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/HuaweiP20Pro.jpg",
     deee: 0.48,
     classeEnergie: "C",
     recyclable: "58%",
-    note: "59%"
+    note: 59
   },
   {
     id: 8,
@@ -111,11 +110,11 @@ export const data = [
     prixTTC: 1499,
     batterie: "10h",
     resolution: "2560 X 1600",
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/HuaweiP20Pro.jpg",
     deee: 0.5,
     classeEnergie: "C",
     recyclable: "54%",
-    note: "56%"
+    note: 56
   },
   {
     id: 9,
@@ -125,11 +124,11 @@ export const data = [
     prixTTC: 599,
     batterie: "6h",
     resolution: "1290 X 1080",
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/HuaweiP20Pro.jpg",
     deee: 0.041,
     classeEnergie: "D",
     recyclable: "49%",
-    note: "59%"
+    note: 59
   },
   {
     id: 10,
@@ -139,11 +138,11 @@ export const data = [
     prixTTC: 1639.99,
     batterie: "12h",
     resolution: "2160 x 1440 ",
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/HuaweiP20Pro.jpg",
     deee: 1.01,
     classeEnergie: "B",
     recyclable: "52%",
-    note: "62%"
+    note: 62
   },
   {
     id: 11,
@@ -153,11 +152,11 @@ export const data = [
     prixTTC: 899,
     batterie: "10h",
     resolution: "2160 x 1440 ",
-    image: "images/HuaweiP20Pro.jpg",
+    image: "img/HuaweiP20Pro.jpg",
     deee: 0.3,
     classeEnergie: "B",
     recyclable: "54%",
-    note: "70%"
+    note: 70
   },
 
 ]

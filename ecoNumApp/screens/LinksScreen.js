@@ -13,10 +13,24 @@ const category = "smartphone";
 const mark = "Apple";
 const model = "Iphone X";
 import Comparatif from "../components/Comparatif";
+import symbolicateStackTrace from "react-native/Libraries/Core/Devtools/symbolicateStackTrace";
 
 export default class LinksScreen extends React.Component {
   state = {
-    open2produit: false
+    open2produit: false,
+    category: "",
+    mark: "",
+    model: "",
+    isDisplayCompare: false
+  };
+
+  getCriteria = (category, mark, model) => {
+    // console.log("getCriteria", category, mark, model);
+    this.setState({
+      category,
+      mark,
+      model
+    });
   };
 
   static navigationOptions = {
@@ -28,12 +42,17 @@ export default class LinksScreen extends React.Component {
     )
   };
 
+  handlePressCompare = () => {
+    this.setState({ isDisplayCompare: true });
+  };
+
   handlePress = () => {
     console.log("ok");
     this.setState({
       open2produit: true
     });
   };
+
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -46,12 +65,14 @@ export default class LinksScreen extends React.Component {
           }}
         />
         <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
-        <SelectList />
-        {this.state.open2produit && <SelectList />}
+        <SelectList getCriteria={this.getCriteria} />
+        {this.state.open2produit && (
+          <SelectList getCriteria={this.getCriteria} />
+        )}
         <View style={styles.homeButton}>
           <View style={styles.button}>
             <Button
-              onPress={this.handlePress}
+              onPress={this.handlePressCompare}
               title="Comparer avec un 2ème produit"
             />
           </View>
@@ -62,7 +83,13 @@ export default class LinksScreen extends React.Component {
             />
           </View>
         </View>
-        <Comparatif />
+        {this.state.isDisplayCompare && (
+          <Comparatif
+            category={this.state.category}
+            mark={this.state.mark}
+            model={this.state.model}
+          />
+        )}
       </ScrollView>
     );
   }

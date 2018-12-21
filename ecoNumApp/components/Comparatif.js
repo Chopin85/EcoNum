@@ -5,27 +5,19 @@ import { data } from "../data";
 
 export default class Comparatif extends Component {
   getProduct(category, mark, model) {
-    console.log(data[0].categorie);
-    console.log(data[0].fabricant);
-    console.log(data[0].designation);
-    const product = data.map(element => {
-      if (
+    const product = data.filter(
+      element =>
         element.categorie === category &&
         element.fabricant === mark &&
         element.designation === model
-      ) {
-        console.log("mon element", element);
-
-        return element;
-      }
-    });
+    );
     return product[0];
   }
 
   render() {
-    const category = "smartphone";
-    const mark = "Apple";
-    const model = "Iphone X";
+    console.log("render", this.props);
+
+    const { category, mark, model } = this.props;
     const product1 = this.getProduct(category, mark, model);
     const product2 = this.getProduct(category, mark, model);
 
@@ -43,19 +35,23 @@ export default class Comparatif extends Component {
         {/* // les suites des infos en mode texte */}
         <View style={{ flex: 1, flexDirection: "row", marginTop: 20 }}>
           <View style={{ flex: 1 }}>
-            <Text>{product1.designation}</Text>
-            <Text style={{ fontSize: 10 }}>{product1.fabricant}</Text>
+            <Text style={{ textAlign: "center" }}>{product1.designation}</Text>
+            <Text style={{ fontSize: 10, textAlign: "center" }}>
+              {product1.fabricant}
+            </Text>
           </View>
           <View style={{ flex: 1 }}>
-            <Text>{product2.designation}</Text>
-            <Text style={{ fontSize: 10 }}>{product2.fabricant}</Text>
+            <Text style={{ textAlign: "center" }}>{product2.designation}</Text>
+            <Text style={{ fontSize: 10, textAlign: "center" }}>
+              {product2.fabricant}
+            </Text>
           </View>
         </View>
-        <Text style={{ textAlign: "center", marginTop: 10 }}>
+
+        <Text style={{ textAlign: "center", marginTop: 20 }}>
           Prix de vente TTC
         </Text>
         <View style={styles.lineStyle} />
-
         <View style={{ flex: 1, flexDirection: "row", marginTop: 20 }}>
           <View style={{ flex: 1 }}>
             <Text style={{ textAlign: "center" }}>{product1.prixTTC}</Text>
@@ -63,6 +59,44 @@ export default class Comparatif extends Component {
           <View style={styles.vertical} />
           <View style={{ flex: 1 }}>
             <Text style={{ textAlign: "center" }}>{product2.prixTTC}</Text>
+          </View>
+        </View>
+
+        <Text style={{ textAlign: "center", marginTop: 20 }}>
+          Capacité batterie
+        </Text>
+        <View style={styles.lineStyle} />
+        <View style={{ flex: 1, flexDirection: "row", marginTop: 20 }}>
+          <View style={{ flex: 1 }}>
+            <Text style={{ textAlign: "center" }}>{product1.batterie}</Text>
+          </View>
+          <View style={styles.vertical} />
+          <View style={{ flex: 1 }}>
+            <Text style={{ textAlign: "center" }}>{product2.batterie}</Text>
+          </View>
+        </View>
+
+        <Text style={{ textAlign: "center", marginTop: 20 }}>Das</Text>
+        <View style={styles.lineStyle} />
+        <View style={{ flex: 1, flexDirection: "row", marginTop: 20 }}>
+          <View style={{ flex: 1 }}>
+            <Text style={{ textAlign: "center" }}>{product1.das}</Text>
+          </View>
+          <View style={styles.vertical} />
+          <View style={{ flex: 1 }}>
+            <Text style={{ textAlign: "center" }}>{product2.das}</Text>
+          </View>
+        </View>
+
+        <Text style={{ textAlign: "center", marginTop: 20 }}>Résolution</Text>
+        <View style={styles.lineStyle} />
+        <View style={{ flex: 1, flexDirection: "row", marginTop: 20 }}>
+          <View style={{ flex: 1 }}>
+            <Text style={{ textAlign: "center" }}>{product1.resolution}</Text>
+          </View>
+          <View style={styles.vertical} />
+          <View style={{ flex: 1 }}>
+            <Text style={{ textAlign: "center" }}>{product2.resolution}</Text>
           </View>
         </View>
       </Fragment>
@@ -74,13 +108,13 @@ const styles = StyleSheet.create({
   lineStyle: {
     borderWidth: 0.5,
     borderColor: "black",
-    marginTop: 10,
+    marginTop: 5,
     marginBottom: -15
   },
   vertical: {
     borderWidth: 0.5,
     borderColor: "black",
     width: 1,
-    height: 30
+    height: 20
   }
 });
