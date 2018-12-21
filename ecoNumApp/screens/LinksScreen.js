@@ -83,10 +83,7 @@ export default class LinksScreen extends React.Component {
               title="Trouver une alternative"
             /> */}
             <AwesomeButton
-              onPress={next => {
-                /** Do Something **/
-                next();
-              }}
+              onPress={this.handlePress}
               backgroundColor="#5f8c5f"
               width={150}
             >
