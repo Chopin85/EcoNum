@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, ScrollView } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
-import { throwStatement } from "babel-types";
+
 const data = require("../data");
 // import RNPickerSelect from './debug'
 
@@ -163,17 +163,6 @@ const styles = StyleSheet.create({
 
 const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
-    fontSize: 16,
-    paddingTop: 13,
-    paddingHorizontal: 10,
-    paddingBottom: 12,
-    borderWidth: 1,
-    borderColor: "gray",
-    borderRadius: 4,
-    backgroundColor: "white",
-    color: "black"
-  },
-  inputAndroid: {
     fontSize: 16,
     paddingTop: 13,
     paddingHorizontal: 10,
