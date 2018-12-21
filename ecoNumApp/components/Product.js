@@ -5,7 +5,8 @@ import { Icon } from "react-native-elements";
 export default class Product extends Component {
   state = {
     product: {},
-    loaded: false
+    loaded: false,
+    pieColor: "green"
   };
 
   componentDidMount() {
@@ -13,10 +14,31 @@ export default class Product extends Component {
       product: this.props.product,
       loaded: true
     });
+    this.getColorPie()
+  }
+  getColorPie = () => {
+    if (this.props.product.note > 35) {
+      this.setState({
+        pieColor: "red"
+      });
+      if (this.props.product.note >= 35 || this.props.product.note  < 70) {
+        this.setState({
+          pieColor: "orange"
+        });
+      }
+      if (this.props.product.note >= 70) {
+        this.setState({
+          pieColor: "green"
+        });
+      }
+    }
   }
 
+
+
   render() {
-    const { loaded, product } = this.state;
+
+    const { loaded, product, pieColor } = this.state;
     const {
       categorie,
       designation,
@@ -28,8 +50,10 @@ export default class Product extends Component {
       classeEnergie,
       recyclable,
       note,
-      image
+      image,
     } = product;
+
+
     return loaded ? (
       <View>
         <Image
@@ -128,7 +152,7 @@ export default class Product extends Component {
             radius={50}
             innerRadius={45}
             series={[note]}
-            colors={["#f00"]}
+            colors={[pieColor]}
             backgroundColor="#ddd"
           />
           <View style={styles.gauge}>
