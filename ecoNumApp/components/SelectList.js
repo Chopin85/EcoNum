@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, ScrollView } from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
 import { throwStatement } from "babel-types";
 const data = require("../data");
@@ -93,52 +93,60 @@ export default class SelectList extends React.Component {
     return (
       <ScrollView>
         {/* Champ Category */}
-        <RNPickerSelect
-          placeholder={{
-            label: "Catégories",
-            value: null,
-            color: "#9EA0A4"
-          }}
-          items={this.state.categories}
-          onValueChange={value => {
-            this.setState({
-              categorieSelect: value
-            });
-            this.getdataFabricant(value);
-          }}
-          style={{ ...pickerSelectStyles }}
-        />
-        {/* Champ Marques */}
-        <RNPickerSelect
-          placeholder={{
-            label: "Marque",
-            value: null,
-            color: "#9EA0A4"
-          }}
-          items={this.state.fabricant}
-          onValueChange={value => {
-            this.setState({
-              fabricantSelect: value
-            });
-            this.getdataModel(this.state.categorieSelect, value);
-          }}
-          style={{ ...pickerSelectStyles }}
-        />
+        <View style={{ display: "flex", flexDirection: "row" }}>
+          <View style={{ width: "50%", padding: 10 }}>
+            <RNPickerSelect
+              placeholder={{
+                label: "Catégories",
+                value: null,
+                color: "#9EA0A4"
+              }}
+              items={this.state.categories}
+              onValueChange={value => {
+                this.setState({
+                  categorieSelect: value
+                });
+                this.getdataFabricant(value);
+              }}
+              style={{ ...pickerSelectStyles }}
+            />
+          </View>
+          {/* Champ Marques */}
+          <View style={{ width: "50%", padding: 10 }}>
+            <RNPickerSelect
+              placeholder={{
+                label: "Marque",
+                value: null,
+                color: "#9EA0A4"
+              }}
+              items={this.state.fabricant}
+              onValueChange={value => {
+                this.setState({
+                  fabricantSelect: value
+                });
+                this.getdataModel(this.state.categorieSelect, value);
+              }}
+              style={{ ...pickerSelectStyles }}
+            />
+          </View>
+        </View>
         {/* Champ modèle */}
-        <RNPickerSelect
-          placeholder={{
-            label: "Modèle",
-            value: null,
-            color: "#9EA0A4"
-          }}
-          items={this.state.model}
-          onValueChange={value => {
-            this.setState({
-              modelSelect: value
-            });
-          }}
-          style={{ ...pickerSelectStyles }}
-        />
+        <View style={{ paddingLeft: 10, paddingRight: 10, paddingBottom: 10 }}>
+          <RNPickerSelect
+            placeholder={{
+              label: "Modèle",
+              value: null,
+              color: "#9EA0A4"
+            }}
+            items={this.state.model}
+            onValueChange={value => {
+              this.setState({
+                modelSelect: value
+              });
+            }}
+            style={{ ...pickerSelectStyles }}
+          />
+        </View>
       </ScrollView>
     );
   }
