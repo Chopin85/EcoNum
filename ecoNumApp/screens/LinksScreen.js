@@ -1,11 +1,11 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, Image } from "react-native";
-import SelectList from "../components/SelectList"
-import Product from "../components/Product"
-const category = "smartphone"
-const mark = "Apple"
-const model = "Iphone X"
-// import Comparatif from "../components/Comparatif";
+import SelectList from "../components/SelectList";
+import Product from "../components/Product";
+const category = "smartphone";
+const mark = "Apple";
+const model = "Iphone X";
+import Comparatif from "../components/Comparatif";
 
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
@@ -16,7 +16,7 @@ export default class LinksScreen extends React.Component {
       />
     )
   };
-  render () {
+  render() {
     return (
       <ScrollView style={styles.container}>
         <Image
@@ -28,9 +28,9 @@ export default class LinksScreen extends React.Component {
           }}
         />
         <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
-        <SelectList/>
+        <SelectList />
         <Product category={category} mark={mark} model={model} />
-        {/* <Comparatif /> */}
+        <Comparatif />
       </ScrollView>
     );
   }
