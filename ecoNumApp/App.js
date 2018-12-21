@@ -3,12 +3,19 @@ import { Platform, StatusBar, StyleSheet, View } from "react-native";
 import { AppLoading, Asset, Font, Icon } from "expo";
 import AppNavigator from "./navigation/AppNavigator";
 
+
+const category = "smartphone"
+const mark = "Samsung"
+const model = "Galaxy S9 double"
+
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false
   };
 
-  render() {
+  render () {
+
+
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
         <AppLoading
