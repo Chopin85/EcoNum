@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, ScrollView } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
-import { throwStatement } from "babel-types";
+
 const data = require("../data");
 // import RNPickerSelect from './debug'
 
