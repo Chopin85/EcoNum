@@ -64,7 +64,7 @@ export default class LinksScreen extends React.Component {
             marginTop: -20
           }}
         />
-        <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
+        <Text style={styles.titleCompare}> Je compare mon appareil </Text>
         <SelectList getCriteria={this.getCriteria} />
         {this.state.open2produit && (
           <SelectList getCriteria={this.getCriteria} />
@@ -105,7 +105,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginTop: 10,
     fontSize: 18,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    marginBottom: 10
   },
   homeButton: {
     display: "flex",
