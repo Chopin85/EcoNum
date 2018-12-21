@@ -133,9 +133,18 @@ export default class SelectList extends React.Component {
           }}
           items={this.state.model}
           onValueChange={value => {
-            this.setState({
-              modelSelect: value
-            });
+            this.setState(
+              {
+                modelSelect: value
+              },
+              () => {
+                this.props.getCriteria(
+                  this.state.categorieSelect,
+                  this.state.fabricantSelect,
+                  this.state.modelSelect
+                );
+              }
+            );
           }}
           style={{ ...pickerSelectStyles }}
         />
