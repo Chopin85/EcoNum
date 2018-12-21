@@ -71,7 +71,7 @@ export default class LinksScreen extends React.Component {
             /> */}
             <AwesomeButton
               onPress={this.handlePressCompare}
-              backgroundColor="#5f8c5f"
+              backgroundColor="#75a579"
               width={150}
             >
               Comparer avec un 2ème produit
@@ -84,7 +84,7 @@ export default class LinksScreen extends React.Component {
             /> */}
             <AwesomeButton
               onPress={this.handlePress}
-              backgroundColor="#5f8c5f"
+              backgroundColor="#75a579"
               width={150}
             >
               Trouver une alternative
