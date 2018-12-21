@@ -17,6 +17,7 @@ export default class Product extends Component {
 
   render() {
     const { loaded, product } = this.state;
+    console.log(product.image);
     const {
       categorie,
       designation,

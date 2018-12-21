@@ -1,4 +1,5 @@
-export const data = [{
+export const data = [
+  {
     id: 1,
     designation: "Iphone X",
     fabricant: "Apple",
@@ -22,7 +23,7 @@ export const data = [{
     batterie: "50h",
     das: "0.4 W/kg",
     resolution: 6.39,
-    image: "img/Smartphone-Huawei-Mate-20-Pro-Double-SIM-128-Go-Noir.jpg",
+    image: "img/Huawei-Mate-20-Pro-Double.jpg",
     deee: 0.02,
     classeEnergie: "A",
     recyclable: "50%",
@@ -157,6 +158,5 @@ export const data = [{
     classeEnergie: "B",
     recyclable: "54%",
     note: 70
-  },
-
-]
+  }
+];
