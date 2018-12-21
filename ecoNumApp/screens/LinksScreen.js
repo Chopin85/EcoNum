@@ -1,5 +1,12 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, Image } from "react-native";
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  Button
+} from "react-native";
 import SelectList from "../components/SelectList";
 import Product from "../components/Product";
 const category = "smartphone";
@@ -16,6 +23,10 @@ export default class LinksScreen extends React.Component {
       />
     )
   };
+
+  handlePress = () => {
+    console.log("ok");
+  };
   render() {
     return (
       <ScrollView style={styles.container}>
@@ -29,6 +40,20 @@ export default class LinksScreen extends React.Component {
         />
         <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
         <SelectList />
+        <View style={styles.homeButton}>
+          <View style={styles.button}>
+            <Button
+              onPress={this.handlePress}
+              title="Comparer avec un 2ème produit"
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              onPress={this.handlePress}
+              title="Trouver une alternative"
+            />
+          </View>
+        </View>
         <Product category={category} mark={mark} model={model} />
         <Comparatif />
       </ScrollView>
@@ -47,6 +72,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 18,
     fontWeight: "bold"
+  },
+  homeButton: {
+    display: "flex",
+    flexDirection: "row",
+    width: "50%",
+    borderWidth: 2,
+    borderColor: "red"
+  },
+  button: {
+    width: "100%",
+    borderWidth: 2,
+    borderColor: "yellow"
   }
 });
 
