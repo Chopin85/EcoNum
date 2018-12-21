@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, ScrollView } from "react-native";
+import { StyleSheet, Text, ScrollView } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
 import { throwStatement } from "babel-types";
 const data = require("../data");
@@ -38,15 +38,14 @@ export default class SelectList extends React.Component {
     this.setState({
       categories: categories2
     });
-
   };
 
   //fonction get data filtre
   getdataFabricant = param => {
     const fabricant = [];
-    const fabricant2 = []
+    const fabricant2 = [];
 
-    console.log(param)
+    console.log(param);
 
     this.state.data.filter(e => {
       if (e.categorie === param && !fabricant.includes(e.fabricant)) {
@@ -54,29 +53,33 @@ export default class SelectList extends React.Component {
       }
     });
     fabricant.map((e, index) => {
-        fabricant2.push({ label: e, value: e });
-      });
-      this.setState({
-        fabricant: fabricant2
-      });
+      fabricant2.push({ label: e, value: e });
+    });
+    this.setState({
+      fabricant: fabricant2
+    });
     console.log(fabricant);
   };
   //fonction get data model
   getdataModel = (cat, fab) => {
     const model = [];
-    const model2 = []
+    const model2 = [];
 
     this.state.data.filter(e => {
-      if (e.categorie === cat && e.fabricant === fab && !model.includes(e.designation)) {
+      if (
+        e.categorie === cat &&
+        e.fabricant === fab &&
+        !model.includes(e.designation)
+      ) {
         model.push(e.designation);
       }
     });
     model.map((e, index) => {
-        model2.push({ label: e, value: e });
-      });
-      this.setState({
-        model: model2
-      });
+      model2.push({ label: e, value: e });
+    });
+    this.setState({
+      model: model2
+    });
     console.log(model);
   };
 
@@ -86,7 +89,7 @@ export default class SelectList extends React.Component {
   }
 
   render() {
-      console.log(this.state.fabricantSelect)
+    console.log(this.state.fabricantSelect);
     return (
       <ScrollView>
         {/* Champ Category */}
@@ -96,15 +99,14 @@ export default class SelectList extends React.Component {
             value: null,
             color: "#9EA0A4"
           }}
-
           items={this.state.categories}
           onValueChange={value => {
             this.setState({
               categorieSelect: value
             });
-            this.getdataFabricant(value)
+            this.getdataFabricant(value);
           }}
-
+          style={{ ...pickerSelectStyles }}
         />
         {/* Champ Marques */}
         <RNPickerSelect
@@ -118,8 +120,9 @@ export default class SelectList extends React.Component {
             this.setState({
               fabricantSelect: value
             });
-            this.getdataModel(this.state.categorieSelect, value)
+            this.getdataModel(this.state.categorieSelect, value);
           }}
+          style={{ ...pickerSelectStyles }}
         />
         {/* Champ modèle */}
         <RNPickerSelect
@@ -134,8 +137,43 @@ export default class SelectList extends React.Component {
               modelSelect: value
             });
           }}
+          style={{ ...pickerSelectStyles }}
         />
       </ScrollView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 30,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+    paddingHorizontal: 10
+  }
+});
+
+const pickerSelectStyles = StyleSheet.create({
+  inputIOS: {
+    fontSize: 16,
+    paddingTop: 13,
+    paddingHorizontal: 10,
+    paddingBottom: 12,
+    borderWidth: 1,
+    borderColor: "gray",
+    borderRadius: 4,
+    backgroundColor: "white",
+    color: "black"
+  },
+  inputAndroid: {
+    fontSize: 16,
+    paddingTop: 13,
+    paddingHorizontal: 10,
+    paddingBottom: 12,
+    borderWidth: 1,
+    borderColor: "gray",
+    borderRadius: 4,
+    backgroundColor: "white",
+    color: "black"
+  }
+});
