@@ -29,7 +29,6 @@ export default class LinksScreen extends React.Component {
         />
         <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
         <SelectList />
-        <Product category={category} mark={mark} model={model} />
         <Comparatif />
       </ScrollView>
     );
