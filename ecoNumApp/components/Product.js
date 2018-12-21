@@ -1,25 +1,28 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
-
+import { View, Text, StyleSheet, Image } from "react-native";
+import Pie from 'react-native-pie'
 export default class Product extends Component {
   state = {
     product: {},
     loaded: false
   };
 
-  componentDidMount() {
+  componentDidMount () {
     this.setState({
       product: this.props.product,
       loaded: true
     });
   }
 
-  render() {
+  render () {
     const { loaded, product } = this.state;
-    const { categorie, designation, fabricant, prixTTC, batterie, resolution, deee, classeEnergie, recyclable, note } = product;
+    const { categorie, designation, fabricant, prixTTC, batterie, resolution, deee, classeEnergie, recyclable, note, image } = product;
     return loaded ? (
 
       <View >
+        <Image
+          source={require("../img/iphonex.png")}
+        />
         <Text style={{ textAlign: "center", fontSize: 18, fontWeight: "bold" }}>{designation}</Text>
         <Text style={{ textAlign: "center" }}>{fabricant}</Text>
         <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
@@ -39,8 +42,20 @@ export default class Product extends Component {
             <Text style={{ textAlign: "center", marginTop: 4 }}>E</Text>
           </View>
         </View>
-        <Text>DEEE : {deee} € d'écotaxe</Text>
-
+        <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
+          <Text>DEEE : {deee} € d'écotaxe</Text>
+        </View>
+        <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
+          <Pie
+            radius={50}
+            innerRadius={45}
+            series={[note]}
+            colors={['#f00']}
+            backgroundColor='#ddd' />
+          <View style={styles.gauge}>
+            <Text style={styles.gaugeText}>{note}%</Text>
+          </View>
+        </View>
       </View>
 
     ) : <Text>
@@ -48,3 +63,18 @@ export default class Product extends Component {
       </Text>
   }
 }
+
+const styles = StyleSheet.create({
+  gauge: {
+    position: 'absolute',
+    width: 100,
+    height: 100,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  gaugeText: {
+    backgroundColor: 'transparent',
+    color: '#000',
+    fontSize: 24,
+  },
+})

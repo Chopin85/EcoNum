@@ -15,7 +15,6 @@ export class MonoText extends React.Component {
           }]
         }
       />
-       <Product category={"ordinateur"} mark={"Lenovo"} model={"Ordinateur4"} />
     </View>
     )
 
