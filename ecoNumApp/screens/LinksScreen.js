@@ -66,11 +66,15 @@ export default class LinksScreen extends React.Component {
   };
 
   handleCompare = () => {
-    this.setState({ isDisplayCompare: true });
+    this.setState({ isDisplayCompare: true, isDisplayListAlternative: false });
   };
 
   handleAlternative = () => {
-    this.setState({ isDisplayListAlternative: true });
+    this.setState({
+      isDisplayCompare: false,
+      isDisplayListAlternative: true,
+      open2produit: false
+    });
   };
 
   render() {

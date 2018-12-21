@@ -34,7 +34,7 @@ class ListAlternativeProduct extends Component {
     const { alternativeProduct, loaded } = this.state;
     return loaded ? (
       this.state.alternativeProduct.map(e => (
-        <AlternativeProduct product={e} />
+        <AlternativeProduct key={e.id} product={e} />
         // <Text>{e.note}</Text>
       ))
     ) : (
