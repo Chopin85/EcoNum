@@ -1,7 +1,17 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, Image } from "react-native";
+import {
+  ScrollView,
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  Button
+} from "react-native";
+import SelectList from "../components/SelectList";
 import Product from "../components/Product";
-
+const category = "smartphone";
+const mark = "Apple";
+const model = "Iphone X";
 import Comparatif from "../components/Comparatif";
 
 export default class LinksScreen extends React.Component {
@@ -12,6 +22,10 @@ export default class LinksScreen extends React.Component {
         style={{ width: 156, height: 51, marginBottom: 15 }}
       />
     )
+  };
+
+  handlePress = () => {
+    console.log("ok");
   };
   render() {
     return (
@@ -25,6 +39,21 @@ export default class LinksScreen extends React.Component {
           }}
         />
         <Text style={styles.titleCompare}> Je compare mon téléphone </Text>
+        <SelectList />
+        <View style={styles.homeButton}>
+          <View style={styles.button}>
+            <Button
+              onPress={this.handlePress}
+              title="Comparer avec un 2ème produit"
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              onPress={this.handlePress}
+              title="Trouver une alternative"
+            />
+          </View>
+        </View>
         <Comparatif />
       </ScrollView>
     );
@@ -42,6 +71,21 @@ const styles = StyleSheet.create({
     marginTop: 10,
     fontSize: 18,
     fontWeight: "bold"
+  },
+  homeButton: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "100%",
+
+  },
+  button: {
+    width: "40%",
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+    marginBottom: 10
+
   }
 });
 

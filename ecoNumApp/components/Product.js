@@ -1,41 +1,20 @@
-import React, {
-  Component,
-} from 'react';
-import {
-  View, Text, StyleSheet
-} from 'react-native';
-import {
-  data
-} from '../data'
-
+import React, { Component } from "react";
+import { View, Text } from "react-native";
 
 export default class Product extends Component {
   state = {
-    product: {
-      designation: "",
-      fabricant: "",
-      categorie: ""
-    },
-
+    product: {},
     loaded: false
-  }
-  getProduct (category, mark, model) {
-    console.log(data[0].categorie);
-    console.log(data[0].fabricant);
-    console.log(data[0].designation);
-    const product = data.map(element => {
-      if (element.categorie === category && element.fabricant === mark && element.designation === model) {
-        return element;
-      }
-    })
-    return product[0]
+  };
+
+  componentDidMount() {
+    this.setState({
+      product: this.props.product,
+      loaded: true
+    });
   }
 
-  componentDidMount () {
-    this.setState({ product: this.getProduct(this.props.category, this.props.mark, this.props.model), loaded: true })
-  }
-
-  render () {
+  render() {
     const { loaded, product } = this.state;
     const { categorie, designation, fabricant, prixTTC, batterie, resolution, deee, classeEnergie, recyclable, note } = product;
     return loaded ? (
@@ -68,5 +47,4 @@ export default class Product extends Component {
         loading ..
       </Text>
   }
-
 }
